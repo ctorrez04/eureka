@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: eureka-service
+server:
+  port: 8761
+
+eureka:
+  client:
+    #telling the server to register himself in the service registry
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+      #defaultZone: ${eureka.host}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0    #wait time for subsequent sync
